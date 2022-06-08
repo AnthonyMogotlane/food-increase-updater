@@ -43,7 +43,7 @@ p {
   z-index: 10;
   padding: 1em;
 }
-.budget-btn {
+.budget-btn, .search-btn {
   border-radius: 8px;
   cursor: pointer;
   padding: 10px 15px;
@@ -65,6 +65,18 @@ input {
 .calculate {
   color: #000;
 }
+
+/* canvas styling */
+.canvas-container {
+ 
+  width: 400px;
+}
+
+
+
+
+
+/* Medea Query */
 
 @media (max-width: 700px) {
   input {
