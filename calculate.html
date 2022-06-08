@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/simple-grid.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="wrapper">
       <h1 class="heading">Budget Calculator</h1>
       <form>
         <label for="Estimated Budget">Estimated Budget:</label>
@@ -65,7 +65,7 @@
               <td>R102.00</td>
             </tr>
             <tr>
-              <td>
+              <td class="food-products">
                 <input type="checkbox" id="products" name="" />
                 <label for="rice">rice</label>
               </td>
@@ -91,6 +91,7 @@
           </tbody>
         </table>
       </form>
+      <button type="button" class="calculate-button">Calculate</button>
       <div class="calculated-budget">
         <form>
           <label for="Estmated budget amount">Estimated budget amount: R</label>

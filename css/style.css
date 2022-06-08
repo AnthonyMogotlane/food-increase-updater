@@ -10,6 +10,7 @@ h1 {
 }
 h2 {
   text-decoration: underline;
+  margin-bottom: 20px;
 }
 .main-heading {
   position: relative;
@@ -42,6 +43,7 @@ p {
   color: white;
   z-index: 10;
   padding: 1em;
+  font-weight: 500 !important;
 }
 .budget-btn, .search-btn {
   border-radius: 8px;
@@ -55,6 +57,19 @@ p {
   margin-bottom: 40px;
   margin-right: 70px;
 }
+.calculate-button {
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 10px 15px;
+  width: 100px;
+  background-color: #9d8189;
+  color: black;
+  box-shadow: 0px 0px 2px 2px white;
+  font-weight: 800;
+  margin-bottom: 40px;
+  margin-right: 70px;
+  padding-right: 20px;
+}
 .content {
   padding: 1em;
   margin: 2em;
@@ -64,6 +79,17 @@ input {
 }
 .calculate {
   color: #000;
+}
+table,
+td {
+  padding: 15px;
+}
+
+.wrapper {
+  margin-top: 4%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
 }
 
 /* canvas styling */
