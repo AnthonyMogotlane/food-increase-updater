@@ -78,7 +78,10 @@ input {
   margin-right: 20px;
 }
 .calculate {
-  color: #000;
+  color:black;
+  background-color:cyan;
+  font-size:x-large;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 table,
 td {
