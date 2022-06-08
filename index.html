@@ -9,7 +9,7 @@
     <title>Food Increase Checker</title>
   </head>
   <body>
-    <div class="container">
+    <div class="wrapper">
       <h1 class="center"><i>Food Increase Tracker</i></h1>
       <div class="main-heading">
         <p>
@@ -31,14 +31,11 @@
         />
         <form>
           <label for="Product">Product:</label>
-          <input
-            type="text"
-            id="foodItem"
-            name="Food"
-            placeholder="e.g Milk"
-            required
-          />
-          <button class="search-btn">Search</button>
+
+          <select name="food-items" class="food-items">
+            <option value="apple">Apple</option>
+            <option value="bread">Bread</option>
+          </select>
         </form>
         <div class="canvas-container">
           <canvas id="myChart"></canvas>
