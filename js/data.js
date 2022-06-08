@@ -1,6 +1,6 @@
 let changedPriceProducts = [
     {
-        "productName": "Apple",
+        "itemName": "apple",
         "desc": "1.5kg",
         "2017": "21.49",
         "2018": "24.74",
@@ -10,7 +10,7 @@ let changedPriceProducts = [
         "2022": "29.74"
     },
     {
-        "productName": "Bread",
+        "itemName": "bread",
         "desc": "1 loaf",
         "2017": "9.67",
         "2018": "9.99",
