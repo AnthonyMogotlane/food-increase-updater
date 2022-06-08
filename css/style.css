@@ -1,7 +1,9 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
 html {
   background-color: #d8e2dc;
 }
@@ -74,9 +76,7 @@ p {
   padding: 1em;
   margin: 2em;
 }
-input {
-  margin-right: 20px;
-}
+
 .calculate {
   color:black;
   background-color:cyan;
@@ -95,11 +95,20 @@ td {
   width: 40%;
 }
 
+/* table styling */
+tr {
+
+ display: flex;
+ gap: 1em;
+}
+
 /* canvas styling */
 .canvas-container {
  
   width: 400px;
 }
+
+
 
 
 
