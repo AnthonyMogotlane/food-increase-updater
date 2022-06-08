@@ -45,7 +45,9 @@ p {
   padding: 1em;
   font-weight: 500 !important;
 }
-.budget-btn, .search-btn {
+
+/* search button */
+/* .budget-btn, .search-btn {
   border-radius: 8px;
   cursor: pointer;
   padding: 10px 15px;
@@ -56,7 +58,8 @@ p {
   font-weight: 800;
   margin-bottom: 40px;
   margin-right: 70px;
-}
+} */
+
 .calculate-button {
   border-radius: 8px;
   cursor: pointer;
@@ -94,13 +97,8 @@ td {
 
 /* canvas styling */
 .canvas-container {
- 
   width: 400px;
 }
-
-
-
-
 
 /* Medea Query */
 
