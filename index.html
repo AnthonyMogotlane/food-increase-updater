@@ -38,14 +38,18 @@
             placeholder="e.g Milk"
             required
           />
-          <button class="budget-btn">Search</button>
+          <button class="search-btn">Search</button>
         </form>
+        <div class="canvas-container">
+          <canvas id="myChart"></canvas>
+        </div>
         <a href="calculate.html" class="calculate"
           >Click here to see if you can afford the latest food prices with your
           budget</a
         >
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/data.js"></script>
     <script src="./js/price-checker.js"></script>
     <script src="./js/price-checker.dom.js"></script>
