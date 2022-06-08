@@ -2,40 +2,41 @@
   margin: 0;
   padding: 0;
 }
-html {
-  background-color: #d8e2dc;
-}
+
 h1 {
   margin-bottom: 40px;
+  background-color: #e5e5e5;
 }
 h2 {
   text-decoration: underline;
   margin-bottom: 20px;
+  color: white;
 }
-.main-heading {
+html {
   position: relative;
-  background-image: url(../img/download.png);
+  background-image: url(../img/fruitAndVeg.jpeg);
   background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 40px;
+  background-size:cover;
+  margin-bottom: 50px;
   border-radius: 0.25em;
+  height: 100;
 }
 img {
   margin-bottom: 40px;
   align-content: center;
 }
 
-.main-heading::before {
+html::before {
   position: absolute;
   content: "";
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: black;
-  opacity: 0.5;
+  background-color: black;
+  opacity: 0.8;
   z-index: -1;
-  border-radius: 0.25em;
+  border-radius: 0.25em
 }
 
 .main-heading,
@@ -92,10 +93,10 @@ td {
 }
 
 .wrapper {
-  margin-top: 4%;
+  margin-top: 2%;
   margin-left: auto;
   margin-right: auto;
-  width: 40%;
+  width: 80%;
 }
 
 /* canvas styling */
@@ -103,7 +104,7 @@ td {
   width: 400px;
 }
 
-/* Medea Query */
+/* Media Query */
 
 @media (max-width: 700px) {
   input {
