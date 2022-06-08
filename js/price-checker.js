@@ -33,19 +33,11 @@ function PriceChecker(){
         }
     }
 
-   
     return{
         getProductDetails,
         setProductDetails,
         checkProductName,
         checkNoDataEntered,
         getProductObj
-
     } 
 }
-
-let test = PriceChecker();
-test.setProductDetails("bread")
-
-
-console.log(test.getProductObj())
