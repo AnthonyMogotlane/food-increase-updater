@@ -169,9 +169,12 @@ td {
 }
 
 .canvas-container-two {
+  margin-top: 1em;
   background: #fff;
   border-radius: 0.25em;
+  height: 400px;
 }
+
 /*======================================================================================*/
 /* Medea Query */
 
