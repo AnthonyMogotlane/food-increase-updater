@@ -1,4 +1,3 @@
-
 /* default styling */
 * {
   margin: 0;
@@ -12,7 +11,7 @@ i {
 
 hr {
   border: none;
-  border: solid #fff .8px;
+  border: solid #fff 0.8px;
 }
 
 body {
@@ -35,7 +34,7 @@ body::before {
   background-color: black;
   opacity: 0.8;
   z-index: -1;
-  border-radius: 0.25em
+  border-radius: 0.25em;
 }
 
 /* header */
@@ -62,13 +61,13 @@ nav > div {
   padding: 2px 5px;
   color: #000;
   font-weight: 500;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .main-heading {
   margin: 1em;
   background: rgba(44, 10, 10, 0.5);
-  border-radius: .25em;
+  border-radius: 0.25em;
 }
 
 .app-intro {
@@ -78,12 +77,11 @@ nav > div {
   font-size: 1em !important;
   font-weight: 500 !important;
   text-align: center;
- 
 }
 
 .sub-heading {
   text-decoration: underline;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   color: white;
 }
 
@@ -110,12 +108,12 @@ nav > div {
 }
 
 .calculate {
-  color:black;
-  background-color:cyan;
+  color: black;
+  background-color: cyan;
   color: blue;
   font-size: 1.4em;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  border-radius: .25em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border-radius: 0.25em;
   padding: 0 5px;
 }
 
@@ -123,11 +121,11 @@ nav > div {
 .canvas-container {
   width: 400px;
   background: #fff;
-  margin: .7em auto;
-  border-radius: .25em;
+  margin: 0.7em auto;
+  border-radius: 0.25em;
 }
-.budget{
-  background-color:lightslategrey;
+.budget {
+  background-color: lightslategrey;
 }
 
 /*======================================================================================*/
@@ -143,8 +141,12 @@ nav > div {
 
 .calculate-content {
   background: rgba(44, 10, 10, 0.5);
-  padding: .5em;
+  padding: 0.5em;
   border-radius: 0.25em;
+}
+#estimPrice::placeholder {
+  color: black;
+  font-weight: 800;
 }
 
 /* table styling */
@@ -177,7 +179,7 @@ td {
   input {
     margin-bottom: 20px;
   }
-  
+
   .budget-btn {
     border-radius: 8px;
     cursor: pointer;
@@ -199,10 +201,12 @@ td {
   }
 }
 
-
-
 /* key frame */
 @keyframes look {
-  from {margin-left: 1px;}
-  to {margin-left: 5px;}
+  from {
+    margin-left: 1px;
+  }
+  to {
+    margin-left: 5px;
+  }
 }
