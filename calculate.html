@@ -1,55 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Budget checker</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/simple-grid.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="heading">Budget Calculator</h1>
-      <form>
-        <label for="Estimated Budget">Estimated Budget:</label>
-        <input
-          type="text"
-          id="budget"
-          name="estimate-budget"
-          placeholder="e.g  R2.000"
-          require
-        />
-      </form>
 
-      <form>
-       <table>
-         <thead>
-           <tr>
-             <th>Products</th>
-             <th>Description</th>
-             <th>Price</th>
-           </tr>
-         </thead>
-         <tbody class="product-calc-container">
-          <tr>
-            <td>
-              <input type="checkbox" id="product-calc" name="product-calc"/>
-              <label for="rice">rice</label>
-            </td>
-            <td>10kg</td>
-            <td>R102.00</td>
-          </tr>
-         </tbody>
-       </table>
-      </form>
-      <button type="button" class="calculate-button">Calculate</button>
-      <div class="calculated-budget">
-        <form>
-          <label for="Estmated budget amount">Estimated budget amount: R</label>
-          <input type="text" name="" id="" disabled placeholder="107.00" />
-        </form>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget checker</title>
+  <!-- custom css -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- simple-grid css -->
+  <link rel="stylesheet" href="css/simple-grid.css" />
+  <!-- font-awesome css -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+</head>
+
+<body class="calculate-body">
+
+  <!-- nav-bar -->
+  <nav>
+    <div>
+      <i class="fas fa-bell"></i>
     </div>
-  </body>
+    <div>
+      <h1 class="app-title">Food Increase Tracker</h1>
+    </div>
+    <div>
+      <a href="index.html" class="calculate-cost">Home</a>
+    </div>
+  </nav>
+
+  <div class="container calculate-container">
+    <div class="row">
+      <div class="col-6 calculate-content">
+        <form>
+          <label for="Estimated Budget">Estimated Budget:</label>
+          <input type="text" id="budget" name="estimate-budget" placeholder="e.g  R2.000" require />
+        </form>
+        <form>
+          <table>
+            <thead>
+              <tr>
+                <th>Products</th>
+                <th>Description</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody class="product-calc-container">
+            </tbody>
+          </table>
+        </form>
+        <button type="button" class="calculate-btn">Calculate</button>
+        <div class="calculated-budget">
+          <form>
+            <label for="Estimated budget amount">Estimated budget amount: R</label>
+            <input type="text" name="estim-price" id="estimPrice" class="estim-price" disabled />
+          </form>
+          <p>You left with R<span class="remain-cash"></span>, add extra item/s</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="canvas-container-two">
+          <canvas id="myChartTwo"></canvas>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/calculate.dom.js"></script>
+</body>
+
 </html>
