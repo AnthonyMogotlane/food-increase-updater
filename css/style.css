@@ -1,38 +1,36 @@
+
+/* default styling */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-h1 {
-  margin-bottom: 40px;
-  background-color: #e5e5e5;
+i {
+  color: #000;
 }
-h2 {
-  text-decoration: underline;
-  margin-bottom: 20px;
-  color: white;
+
+hr {
+  border: none;
+  border: solid #fff .8px;
 }
-html {
+
+body {
   position: relative;
   background-image: url(../img/fruitAndVeg.jpeg);
   background-repeat: no-repeat;
-  background-size:cover;
-  margin-bottom: 50px;
-  border-radius: 0.25em;
-  height: 100;
-}
-img {
-  margin-bottom: 40px;
-  align-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-html::before {
+body::before {
   position: absolute;
   content: "";
   top: 0;
   left: 0;
   width: 100%;
+  min-height: 100vh;
   height: 100%;
   background-color: black;
   opacity: 0.8;
@@ -40,27 +38,115 @@ html::before {
   border-radius: 0.25em
 }
 
-.main-heading,
-p {
-  color: white;
-  z-index: 10;
-  padding: 1em;
-  font-weight: 500 !important;
+/* header */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e5e5e5;
 }
 
-/* search button */
-/* .budget-btn, .search-btn {
-  border-radius: 8px;
-  cursor: pointer;
-  padding: 10px 15px;
-  width: 100px;
-  background-color: #9d8189;
-  color: black;
-  box-shadow: 0px 0px 2px 2px white;
-  font-weight: 800;
-  margin-bottom: 40px;
-  margin-right: 70px;
-} */
+nav > div {
+  text-align: center;
+}
+
+.app-title {
+  font-size: 1.6em !important;
+  color: #000;
+}
+
+/* calculate cost button */
+.calculate-cost {
+  background: #b8b1b1;
+  border-radius: 0.25em;
+  padding: 2px 5px;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none
+}
+
+.main-heading {
+  margin: 1em;
+  background: rgba(44, 10, 10, 0.5);
+  border-radius: .25em;
+}
+
+.app-intro {
+  color: white;
+  z-index: 10;
+  /* padding: 1em; */
+  font-size: 1em !important;
+  font-weight: 500 !important;
+  text-align: center;
+}
+
+.sub-heading {
+  text-decoration: underline;
+  margin-bottom: .5em;
+  color: white;
+}
+
+.inflation-img {
+  margin-bottom: 1em;
+}
+
+.form-items-graph {
+  margin: 1em;
+}
+
+.form-items-graph > label {
+  color: #fff;
+}
+
+.fa-arrow-right {
+  color: #fff;
+  animation: look 1s linear infinite;
+}
+
+/* to calculate link */
+.calculate-link {
+  text-decoration: none;
+}
+
+.calculate {
+  color:black;
+  background-color:cyan;
+  color: blue;
+  font-size: 1.4em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border-radius: .25em;
+  padding: 0 5px;
+}
+
+/* canvas styling */
+.canvas-container {
+  width: 400px;
+  background: #fff;
+  margin: .7em auto;
+  border-radius: .25em;
+}
+
+/*======================================================================================*/
+/* Calculate page styling */
+
+.calculate-body {
+  color: #fff !important;
+}
+
+.calculate-container {
+  margin: 1em;
+}
+
+.calculate-content {
+  background: rgba(44, 10, 10, 0.5);
+  padding: .5em;
+  border-radius: 0.25em;
+}
+
+/* table styling */
+td {
+  padding: 0 0;
+}
 
 .calculate-button {
   border-radius: 8px;
@@ -75,53 +161,19 @@ p {
   margin-right: 70px;
   padding-right: 20px;
 }
-.content {
-  padding: 1em;
-  margin: 2em;
+
+.canvas-container-two {
+  background: #fff;
+  border-radius: 0.25em;
 }
-
-.calculate {
-  color:black;
-  background-color:cyan;
-  font-size:x-large;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-}
-table,
-td {
-  padding: 15px;
-}
-
-.wrapper {
-  margin-top: 2%;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-}
-
-/* table styling */
-tr {
-
- display: flex;
- gap: 1em;
-}
-
-/* canvas styling */
-.canvas-container {
-  width: 400px;
-}
-
-
-
-
-
-
-
+/*======================================================================================*/
 /* Medea Query */
 
 @media (max-width: 700px) {
   input {
     margin-bottom: 20px;
   }
+  
   .budget-btn {
     border-radius: 8px;
     cursor: pointer;
@@ -135,10 +187,18 @@ tr {
     margin-right: 70px;
     text-align: right;
   }
+
   .wrapper {
     margin-left: auto;
     margin-right: auto;
-
     width: 100%;
   }
+}
+
+
+
+/* key frame */
+@keyframes look {
+  from {margin-left: 1px;}
+  to {margin-left: 5px;}
 }
