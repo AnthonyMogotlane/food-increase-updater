@@ -3,7 +3,6 @@ let dropdown = document.querySelector(".food-items");
 let canvasContainer = document.querySelector(".canvas-container");
 let canvasChart = document.querySelector("#myChart");
 
-
 //instance of PriceChecker function
 let test = PriceChecker();
 
@@ -18,10 +17,10 @@ dropdown.addEventListener("change", (e) => {
 
   //remove and create canvas element
   canvasChart.remove();
-  canvasContainer.innerHTML = `<canvas id="myChart"></canvas>`
+  canvasContainer.innerHTML = `<canvas id="myChart"></canvas>`;
 
   //product graph set up
-  const labels = ["2017", "2018", "2019", "2020", "2021"];
+  const labels = ["2017", "2018", "2019", "2020", "2021", "2022"];
 
   const data = {
     labels: labels,
@@ -36,6 +35,7 @@ dropdown.addEventListener("change", (e) => {
           theObj[2019],
           theObj[2020],
           theObj[2021],
+          theObj[2022],
         ],
       },
     ],
@@ -50,12 +50,3 @@ dropdown.addEventListener("change", (e) => {
 
   const myChart = new Chart(document.getElementById("myChart"), config);
 });
-
-
-
-
-
-
-
-
-
