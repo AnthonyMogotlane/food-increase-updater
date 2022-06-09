@@ -43,7 +43,7 @@ calculateBtn.addEventListener("click", () => {
 
 
 
-const labels = ["2017", "2018", "2019", "2020", "2021"];
+const labels = ["2017", "2018", "2019", "2020", "2021","2022"];
 
 const data = {
   labels: labels,
@@ -53,11 +53,11 @@ const data = {
       backgroundColor: "rgb(0, 0, 132)",
       borderColor: "rgb(0, 99, 132)",
       data: [
-        10,
-        20,
-        30,
-        40,
-        50,
+       11.5,
+        20.0,
+        23.2,
+        40.2,
+        65.5,
       ],
     },
   ],

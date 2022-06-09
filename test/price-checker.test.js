@@ -34,7 +34,7 @@ describe('The PriceChecker Function', function() {
 		
 		priceChecker.setProductDetails("bread");
 
-		assert.deepEqual({2017: "9.67", 2018: "9.99", 2019: "10.37", 2020: "11.24", 2021: "12.37", itemName: "bread", desc: "1 loaf"}, priceChecker.getProductObj());
+		assert.deepEqual({2017: "9.67", 2018: "9.99", 2019: "10.37", 2020: "11.24", 2021: "12.37", 2022: "17.00", itemName: "bread", desc: "1 loaf"}, priceChecker.getProductObj());
 
 	});
 	it ('should bring back all the details of the apple', function() {
@@ -50,7 +50,8 @@ describe('The PriceChecker Function', function() {
 			2018: "24.74",
 			2019: "28.74",
 			2020: "27.74",
-			2021: "28.49"
+			2021: "28.49",
+			2022: "29.74"
 		}, priceChecker2.getProductObj());
 
 	});

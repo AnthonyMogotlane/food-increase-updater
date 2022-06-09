@@ -78,6 +78,7 @@ nav > div {
   font-size: 1em !important;
   font-weight: 500 !important;
   text-align: center;
+ 
 }
 
 .sub-heading {
@@ -124,6 +125,9 @@ nav > div {
   background: #fff;
   margin: .7em auto;
   border-radius: .25em;
+}
+.budget{
+  background-color:lightslategrey;
 }
 
 /*======================================================================================*/
