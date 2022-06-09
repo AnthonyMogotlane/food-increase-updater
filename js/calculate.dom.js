@@ -3,47 +3,52 @@ let tableBody = document.querySelector(".product-calc-container");
 let calculateBtn = document.querySelector(".calculate-btn");
 let budgetAmount = document.querySelector("#budget");
 
-
-for(let data of changedPriceProducts) {
-    
-    let tr = document.createElement("tr");
-    tr.innerHTML = `
+for (let data of changedPriceProducts) {
+  let tr = document.createElement("tr");
+  tr.innerHTML = `
     <td>
     <input type="checkbox" id="product-calc" name="product-calc" class="product-calc" value="${data[2022]}"/>
     <label for="rice">${data.itemName}</label>
     </td>
     <td>${data.desc}</td>
-    <td>R${data[2022]}</td>`
-    tableBody.appendChild(tr)
+    <td>
+    <select class="qty">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    </select>
+    </td>
+    <td>R${data[2022]}</td>`;
+  tableBody.appendChild(tr);
 }
 
 let checkbox = document.querySelectorAll(".product-calc");
 let estimatedPrice = document.querySelector(".estim-price");
 let remainCash = document.querySelector(".remain-cash");
-
-
+let quantity = document.querySelectorAll(".qty");
 
 calculateBtn.addEventListener("click", () => {
-    let totalPrice = 0;
-    let cashLeft = 0;
-    checkbox.forEach(element => {
-        
-        if(element.checked == true) {
-            totalPrice += Number(element.value);
-        }
-    });
-    console.log(totalPrice.toFixed(2));
-    
-    estimatedPrice.setAttribute("placeholder", totalPrice.toFixed(2))
-    console.log(budgetAmount.value)
-    cashLeft = budgetAmount.value - totalPrice;
-    remainCash.innerHTML = cashLeft.toFixed(2);
+  let totalPrice = 0;
+  let cashLeft = 0;
+  checkbox.forEach((element, k) => {
+    if (element.checked == true) {
+      let qtyTest = 1;
 
-})
+      qtyTest = quantity[k].options[quantity[k].selectedIndex].value;
 
+      totalPrice += Number(element.value) * qtyTest;
+      console.log("total", totalPrice);
+    }
+  });
+  console.log(totalPrice.toFixed(2));
 
+  estimatedPrice.setAttribute("placeholder", totalPrice.toFixed(2));
+  console.log(budgetAmount.value);
+  cashLeft = budgetAmount.value - totalPrice;
+  remainCash.innerHTML = cashLeft.toFixed(2);
+});
 
-const labels = ["2017", "2018", "2019", "2020", "2021","2022"];
+const labels = ["2017", "2018", "2019", "2020", "2021", "2022"];
 
 const data = {
   labels: labels,
@@ -52,13 +57,7 @@ const data = {
       label: "this year you paid 22% more, check!",
       backgroundColor: "rgb(0, 0, 132)",
       borderColor: "rgb(0, 99, 132)",
-      data: [
-       11.5,
-        20.0,
-        23.2,
-        40.2,
-        65.5,
-      ],
+      data: [11.5, 20.0, 23.2, 40.2, 65.5],
     },
   ],
 };
