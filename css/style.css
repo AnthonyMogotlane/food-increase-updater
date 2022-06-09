@@ -29,6 +29,7 @@ body::before {
   top: 0;
   left: 0;
   width: 100%;
+
   min-height: 100vh;
   height: 100%;
   background-color: black;
@@ -179,9 +180,9 @@ td {
 /* Medea Query */
 
 @media (max-width: 700px) {
-  input {
+  /* input {
     margin-bottom: 20px;
-  }
+  } */
 
   .budget-btn {
     border-radius: 8px;
@@ -196,10 +197,33 @@ td {
     margin-right: 70px;
     text-align: right;
   }
+  body::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* min-height: 100vh; */
+    height: 1100px;
+    background-color: black;
+    opacity: 0.8;
+    z-index: -1;
+    border-radius: 0.25em;
+  }
 
-  .wrapper {
+  /* .wrapper {
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+  } */
+  .canvas-container {
+    width: 100%;
+    background: #fff;
+    margin: 0.7em auto;
+    border-radius: 0.25em;
+  }
+  .inflation-img {
+    margin-bottom: 1em;
     width: 100%;
   }
 }

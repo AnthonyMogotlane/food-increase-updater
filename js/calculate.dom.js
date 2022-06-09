@@ -2,6 +2,8 @@
 let tableBody = document.querySelector(".product-calc-container");
 let calculateBtn = document.querySelector(".calculate-btn");
 let budgetAmount = document.querySelector("#budget");
+let canvasChartTwo = document.querySelector("#myChartTwo");
+let canvasContainerTwo = document.querySelector(".canvas-container-two");
 
 for (let data of changedPriceProducts) {
   let tr = document.createElement("tr");
@@ -27,47 +29,116 @@ let estimatedPrice = document.querySelector(".estim-price");
 let remainCash = document.querySelector(".remain-cash");
 let quantity = document.querySelectorAll(".qty");
 
-calculateBtn.addEventListener("click", () => {
-  let totalPrice = 0;
-  let cashLeft = 0;
-  checkbox.forEach((element, k) => {
-    if (element.checked == true) {
-      let qtyTest = 1;
+function createBlankYearlyTotals() {
+  return [
+    { year: "2017", total: 0 },
+    { year: "2018", total: 0 },
+    { year: "2019", total: 0 },
+    { year: "2020", total: 0 },
+    { year: "2021", total: 0 },
+    { year: "2022", total: 0 },
+  ];
+}
 
-      qtyTest = quantity[k].options[quantity[k].selectedIndex].value;
+let yearlyTotals = createBlankYearlyTotals();
 
-      totalPrice += Number(element.value) * qtyTest;
-      console.log("total", totalPrice);
-    }
+function showDefaultDataset() {
+  yearlyTotals.forEach((yearlyTotal, k) => {
+    yearlyTotal.total += Number(changedPriceProducts[k][yearlyTotal.year]) * 1;
   });
-  console.log(totalPrice.toFixed(2));
+  graphData();
+}
 
-  estimatedPrice.setAttribute("placeholder", totalPrice.toFixed(2));
-  console.log(budgetAmount.value);
-  cashLeft = budgetAmount.value - totalPrice;
-  remainCash.innerHTML = cashLeft.toFixed(2);
+showDefaultDataset();
+
+calculateBtn.addEventListener("click", () => {
+  calcTotal();
 });
 
-const labels = ["2017", "2018", "2019", "2020", "2021", "2022"];
+function calcTotal() {
+  totalPrice2022 = 0;
+  let cashLeft = 0;
+  yearlyTotals = createBlankYearlyTotals();
 
-const data = {
-  labels: labels,
-  datasets: [
-    {
-      label: "this year you paid 22% more, check!",
-      backgroundColor: "rgb(0, 0, 132)",
-      borderColor: "rgb(0, 99, 132)",
-      data: [11.5, 20.0, 23.2, 40.2, 65.5],
+  const wasAnythingChecked = [...checkbox].some((c) => c.checked);
+
+  if (!wasAnythingChecked) {
+    showDefaultDataset();
+    return;
+  }
+
+  checkbox.forEach((element, k) => {
+    if (element.checked == true) {
+      //looping through quantity
+
+      let qtyTest = quantity[k].options[quantity[k].selectedIndex].value;
+
+      yearlyTotals.forEach((yearlyTotal) => {
+        yearlyTotal.total +=
+          Number(changedPriceProducts[k][yearlyTotal.year]) * qtyTest;
+      });
+
+      totalPrice2022 += Number(changedPriceProducts[k][2022]) * qtyTest;
+      // console.log("total", totalPrice2022);
+    }
+  });
+
+  estimatedPrice.setAttribute("placeholder", totalPrice2022.toFixed(2));
+  cashLeft = budgetAmount.value - totalPrice2022;
+  remainCash.innerHTML = cashLeft.toFixed(2);
+
+  graphData();
+}
+
+function graphData() {
+  //remove and create canvas element
+  canvasChartTwo.remove();
+  canvasContainerTwo.innerHTML = `<canvas id="myChartTwo"></canvas>`;
+
+  const labels = ["2017", "2018", "2019", "2020", "2021", "2022"];
+
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "see how much you have been spending over the years",
+        backgroundColor: "rgb(0, 0, 132)",
+        borderColor: "rgb(0, 99, 132)",
+        data: yearlyTotals.map((t) => t.total),
+      },
+    ],
+  };
+
+  const config = {
+    type: "line",
+    data: data,
+    options: {
+      maintainAspectRatio: false,
     },
-  ],
-};
+  };
 
-const config = {
-  type: "line",
-  data: data,
-  options: {
-    maintainAspectRatio: false,
-  },
-};
+  const myChartTwo = new Chart(document.getElementById("myChartTwo"), config);
+}
+graphData();
 
-const myChartTwo = new Chart(document.getElementById("myChartTwo"), config);
+// function calcTotal(totalVar, year) {
+//   totalVar = 0;
+//   let cashLeft = 0;
+//   checkbox.forEach((element, k) => {
+//     if (element.checked == true) {
+//       //looping through quantity
+//       let qtyTest = 1;
+//       qtyTest = quantity[k].options[quantity[k].selectedIndex].value;
+
+//       totalPrice2022 += Number(changedPriceProducts[k][2017]) * qtyTest;
+//       console.log("total", totalPrice2022);
+//     }
+//   });
+//   console.log(totalPrice2022.toFixed(2));
+
+//   estimatedPrice.setAttribute("placeholder", totalPrice2022.toFixed(2));
+
+//   cashLeft = budgetAmount.value - totalPrice2022;
+//   remainCash.innerHTML = cashLeft.toFixed(2);
+//   return totalVar;
+// }
