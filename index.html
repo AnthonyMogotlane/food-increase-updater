@@ -4,15 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- custom css -->
     <link rel="stylesheet" href="css/style.css" />
+    <!-- simple-grid css -->
     <link rel="stylesheet" href="css/simple-grid.css" />
+    <!-- font-awesome css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <title>Food Increase Checker</title>
   </head>
   <body>
-    <div class="wrapper">
-      <h1 class="center"><i>Food Increase Tracker</i></h1>
-      <div class="main-heading">
-        <p>
+    <!-- nav-bar -->
+    <nav>
+      <div>
+        <i class="fas fa-bell"></i>
+      </div>
+      <div>
+        <h1 class="app-title">Food Increase Tracker</h1>
+      </div>
+      <div>
+        <a href="calculate.html" class="calculate-cost">Calculate Costs</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="main-heading col-12">
+        <p class="app-intro">
           Food increase affects customers daily and according to STATS SA The
           food and non-alcoholic beverages product group was the second-largest
           contributor to the annual inflation rate in August, recording an
@@ -22,30 +38,31 @@
           they can be able to plan ahead for their budget.
         </p>
       </div>
-      <div class="center">
-        <h2 class="center">South Africa food inflation</h2>
+      <div class="center col-12 main-content">
+        <h2 class="center sub-heading">South Africa Food Inflation</h2>
         <img
-          class="center"
+          class="center inflation-img"
           src="./img/south-africa-food-inflation.png"
           alt="graph"
         />
-        <form>
+        <hr>
+        <form class="form-items-graph">
           <label for="Product">Product:</label>
-
           <select name="food-items" class="food-items">
             <option value="apple">Apple</option>
             <option value="bread">Bread</option>
           </select>
         </form>
         <div class="canvas-container">
+          No Data, select item
           <canvas id="myChart"></canvas>
         </div>
-        <a href="calculate.html" class="calculate"
-          >Click here to see if you can afford the latest food prices with your
-          budget</a
+        <a href="calculate.html" class="calculate-link"> <i class="fas fa-arrow-right"></i> <span class="calculate">Click here to see if you can afford the latest food prices with your
+          budge</span></a
         >
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/data.js"></script>
     <script src="./js/price-checker.js"></script>
